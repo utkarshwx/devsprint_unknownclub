@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kiitpass/Pages/loginScreen.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyApp(),
+    home: LoginPage(),
+    theme: ThemeData(primarySwatch: Colors.green),
   ));
 }
 
