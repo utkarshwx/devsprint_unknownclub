@@ -32,12 +32,19 @@ dependencies:
   firebase_auth: ^4.1.1
   flutter:
     sdk: flutter
+  # cloud_firestore: ^3.1.5
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
+  cloud_firestore: ^4.0.4
+  http: ^0.13.5
+  shared_preferences: ^2.0.15
+  email_auth: ^1.0.0
+  google_sign_in: ^5.4.2
+  mysql1: ^0.20.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +72,11 @@ flutter:
   assets:
     - assets/login.svg
     - assets/SignUp1.svg
+    - assets/man.svg
+    - assets/female.svg
+    - assets/manBorder.svg
+    - assets/femaleGreen.svg
+    - assets/gym.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
