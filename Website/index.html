@@ -1,15 +1,36 @@
-<!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
-  <title>Kiit epass</title>
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <h1></h1>
-</body>
+<script>
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return false;
+  }
+
+  function checkCookie() {
+    var user = getCookie("epass");
+    console.log(user);
+    if (user != "") {
+      // alert('user logged in successfully');
+      window.location.replace("/website/dashboard/");
+    }else{
+      window.location.replace(
+        "/website/login/"
+      );
+    }
+     
+  }
+
+  window.onload = checkCookie();
+</script>  
 </html>
