@@ -1,35 +1,50 @@
-<!doctype html>
-<html class="dark">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Kiit epass</title>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  
-  <button class="bg-sky-500 hover:bg-sky-700 ...">
-    Save changes
-  </button>
-
-  <form>
-    <label class="block">
-        <span class="block text-sm font-medium text-slate-700">Username</span>
-        <!-- Using form state modifers, the classes can be identical for every input -->
-        <input type="text" value="tbone" disabled class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-          disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-          invalid:border-pink-500 invalid:text-pink-600
-          focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-        "/>
-      </label>
-
-  </form>
-
-  <h1></h1>
+	<img class="wave-top"src="images/group73.png">
+	<div class="container">
+		<div class="img">
+			<img src="images/human.png">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+				<h2 class="title" style="padding-bottom: 20px;">Admin Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" id="email">
+           		   </div>
+           		</div>
+           		<div class="input-div pass" style="padding-bottom: 20px;" >
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div" >
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="psw">
+            	   </div>
+            	</div>
+              <a href="/Website/dashboard/index.html">Forgot Password?</a>
+            	<!-- <a href="#">Forgot Password?</a> -->
+            	<input href="/Website/dashboard/index.html" type="submit" class="btn" value="Login" id="submitData" >
+            </form>
+        </div>
+    </div>
+    <img class="wave-down"src="images/group74.png">
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
+<script type="module">
+
+</script>
