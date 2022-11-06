@@ -9,56 +9,40 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/> -->
 </head>
 <body>
+    
   <div class="container">
     <nav>
-      <ul>
-        <li><a href="#" class="logo">
-          <img src="./pic/logo.jpg">
-          <span class="nav-item">PASS SERVICE</span>
-        </a></li>
-        <li><a href="#">
-          <i class="fas fa-menorah"></i>
-          <span class="nav-item">Dashboard</span>
-        </a></li>
-        
-        <li><a href="#">
-          <i class="fas fa-database"></i>
-          <span class="nav-item">Report</span>
-        </a></li>
-        <li><a href="#">
-          <i class="fas fa-chart-bar"></i>
-          <span class="nav-item">Admin Settings</span>
-        </a></li>
-        <li><a href="#">
-            <i class="material-symbols-rounded"></i>
-            <span class="nav-item">QR code</span>
-          </a></li>
-        
-
-        <li><a href="/Website/index.html" class="logout">
-          <i class="fas fa-sign-out-alt"></i>
-          <span class="nav-item">Log out</span>
-        </a></li>
-      </ul>
+        <ul>
+            <li><span><a class="material-symbols-rounded ">Home</a></span><p class="home1">Home</p></li>
+            <li><a class="material-symbols-rounded">settings</a></li>
+            <li><a class="material-symbols-rounded">dashboard</a></li>
+            <li><a class="material-symbols-rounded">qr_code</a></li>
+          </ul>
     </nav>
 
 
     <section class="main">
+        <br> 
 
-        <div class="main-topi">
-            <span class=""> King's Palace -5 </span>
-            <a href="https://time.is/Kolkata" id="time_is_link" rel="nofollow" style="font-size:20px"></a>
-            <span id="Kolkata_z424" style="font-size:20px"></span>
+        <div class="main-topi flex-container">
+            
+            
+            <a href="https://time.is/Kolkata" id="time_is_link" rel="nofollow" style="font-size:0px"></a>
+            <span class="time" id="Kolkata_z424" style="font-size:15px"></span>
             <script src="//widget.time.is/en.js"></script>
             <script>
-                time_is_widget.init({Kolkata_z424:{template:"DATE TIME",  date_format:"dname  daynum/monthnum/year ||", time_format:"12hours:minutesAMPM"}});
+                time_is_widget.init({Kolkata_z424:{template:"DATE TIME",  date_format:"dname  daynum/monthnum/year   ||  ", time_format:"12hours:minutesAMPM"}});
             </script>
 
 
         </div>
 
         <div class="main-top">
+            <br>    
+            <br>
             <h1>Overview</h1>
+            <br>
+            <button>King's Palace -5</button>
           </div>
       
       <section class="attendance">
@@ -78,19 +62,19 @@
               <tr>
                 <td>Adwaith PJ</td>
                 <td>2129013</td>
-                <td>Design</td>
-                <td>03-24-22</td>
+                <td>Library</td>
+                <td>out</td>
                 <td>8:00AM</td>
                 <td>3:00PM</td>
               </tr>
-              <tr class="active">
+              <!-- <tr>
                 <td>Utarsh Nigam</td>
                 <td>Balbina Kherr</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
+                <td>GYM</td>
+                <td  class="active">In</td>
                 <td>9:00AM</td>
                 <td>4:00PM</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>Sourav Goel</td>
                 <td>Badan John</td>
@@ -132,3 +116,42 @@
 
 </body>
 </html>
+
+<script>
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return false;
+    }
+  
+    function checkCookie() {
+      var user = getCookie("epass");
+      console.log(user);
+      if (user != "") {
+        // alert('user logged in successfully');
+      //   window.location.replace("/dashboard");
+      }else{
+        window.location.replace("/login");
+      }
+       
+    }
+  
+    function delete_cookie(name){
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    checkCookie();
+  }
+  
+    window.onload = checkCookie();
+  </script>  
+  
+  <a href="javascript:delete_cookie('epass');">Log Out</a>

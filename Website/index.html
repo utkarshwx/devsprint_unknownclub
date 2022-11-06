@@ -1,50 +1,36 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Animated Login Form</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<img class="wave-top"src="images/group73.png">
-	<div class="container">
-		<div class="img">
-			<img src="images/human.png">
-		</div>
-		<div class="login-content">
-			<form action="index.html">
-				<h2 class="title" style="padding-bottom: 20px;">Admin Login</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" class="input" id="email">
-           		   </div>
-           		</div>
-           		<div class="input-div pass" style="padding-bottom: 20px;" >
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div" >
-           		    	<h5>Password</h5>
-           		    	<input type="password" class="input" id="psw">
-            	   </div>
-            	</div>
-              <a href="/Website/dashboard/index.html">Forgot Password?</a>
-            	<!-- <a href="#">Forgot Password?</a> -->
-            	<input href="/Website/dashboard/index.html" type="submit" class="btn" value="Login" id="submitData" >
-            </form>
-        </div>
-    </div>
-    <img class="wave-down"src="images/group74.png">
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
+<script>
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return false;
+  }
+
+  function checkCookie() {
+    var user = getCookie("epass");
+    console.log(user);
+    if (user != "") {
+      // alert('user logged in successfully');
+      window.location.replace("/website/dashboard/");
+    }else{
+      window.location.replace(
+        "/website/login/"
+      );
+    }
+     
+  }
+
+  window.onload = checkCookie();
+</script>  
 </html>
-
-<script type="module">
-
-</script>
