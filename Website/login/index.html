@@ -21,7 +21,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input" id="email">
+           		   		<input type="text" class="input" name="email" id="email">
            		   </div>
            		</div>
            		<div class="input-div pass" style="padding-bottom: 20px;" >
@@ -30,12 +30,12 @@
            		   </div>
            		   <div class="div" >
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input" id="psw">
+           		    	<input type="password" class="input" name="psw" required id="psw">
             	   </div>
             	</div>
               <a href="/Website/dashboard/index.html">Forgot Password?</a>
             	<!-- <a href="#">Forgot Password?</a> -->
-            	<input href="/Website/dashboard/index.html" type="submit" class="btn" value="Login" id="submitData" >
+            	<button type="button" id="submitData" name="submitData" class="registerbtn">Login</button>
             </form>
         </div>
     </div>
@@ -112,7 +112,7 @@ function setCookie(cname, cvalue, exdays) {
                         alert('user logged in successfully');
                         let x = document.cookie;
                         console.log(x);
-                        window.location.replace("/dashboard");
+                        window.location.replace("/website/dashboard");
 
                     })
                     .catch((error) => {
